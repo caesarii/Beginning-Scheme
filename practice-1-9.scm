@@ -35,14 +35,14 @@
 )
 
 (define (+ a b)
-	(define (plus low base sum i)
-		(if (= i m)
+	(define (plus limit base sum i)
+		(if (= i limit)
 			sum
-			(plus a b (inc sum) (inc i))
+			(plus limit b (inc sum) (inc i))
 		)
 	)
 	
-	(plus 0 b b 0)
+	(plus a b b 0)
 	
 )
 

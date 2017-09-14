@@ -1,3 +1,4 @@
+; 递归 
 (define (fib n)
      (cond ((= n 0) 0)
            ((= n 1) 1)
@@ -8,6 +9,7 @@
      
 )
 
+; 迭代
 (define (fib n)
      (fib-iter 1 0 n)
 )

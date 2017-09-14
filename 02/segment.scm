@@ -1,0 +1,40 @@
+(define (make-point x y)
+	(cons x y)
+)
+
+(define (x-point point)
+	(car point)
+)
+
+(define (y-point point)
+	(cdr point)
+)
+
+(define point (make-point 2 3))
+(x-point point)
+(y-point point)
+
+(define (make-segment start end)
+	(cons start end)
+)
+
+(define (start-segment segment)
+	(car segment)
+)
+(define (end-segment segment)
+	(cdr segment)
+)
+
+(define start (make-point 1 1))
+(define end (make-point 3 3))
+(define segment (make-segment start end))
+(start-segment segment)
+(end-segment segment)
+
+(define (mid-segment segment)
+	(define start (start-segment segment))
+	(define end (end-segment segment))
+	(define x (/ (+ (x-point start) (x-point end)) 2))
+	(define y (/ (+ (y-point start) (y-point end)) 2))
+	(make-point x y)
+)

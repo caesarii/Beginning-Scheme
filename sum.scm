@@ -54,12 +54,13 @@
 
 ; 迭代版的 sum
 (define (sum term a next b)
-	(define (iter a result)
+	(define (iter a result b)
 		(if (> a b)
-			(iter b result)
-			(iter (+ a 1) result)
+			(iter b result b)
+		else	
+			(iter (+ a 1) (+ a result) b)
 		)
 	)
-	(iter a 0)
+	(iter a 0 b)
 )
 
