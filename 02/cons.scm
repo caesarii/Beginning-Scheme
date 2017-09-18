@@ -10,6 +10,6 @@
 (define y (cons 3 4))
 (define z (cons x y))
 (car (car z))
-(car (cdr z))
 (cdr (car z))
+(car (cdr z))
 (cdr (cdr z))
