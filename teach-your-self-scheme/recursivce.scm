@@ -74,23 +74,7 @@
 ; 尾递归
 
 ; 反转列表
-(define loop
-    (lambda (s, r)
-        (if (null? s)
-            r
-            (let* ((d (cdr s)))
-                
-                (set-cdr! s r)
-                (loop d s)
-            )
-        )
-    )    
-)
-(define reverse!
-    (lambda (s)
-        (loop s `())
-    )
-)
+
 (define l `(1 2 3 4))
 (log l)
 (reverse! l)

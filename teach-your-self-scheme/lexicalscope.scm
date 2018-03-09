@@ -25,9 +25,3 @@
     (log(list x y z))
 )
 
-; fluid-let
-(fluid-let ((counter 99))
-    (+ counter 1)
-    (log counter)
-)
-(log counter)
