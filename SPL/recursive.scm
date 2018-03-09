@@ -82,3 +82,14 @@
 
 (display (abs-all `(-1 2 -3 4)))
 (newline)
+
+; map 函数的实现
+(define map1 
+    (lambda (p ls)
+        (if (null? ls)
+        `()
+        (cons (p (car ls))
+            (mapl p (car ls))
+        ))
+    )
+)
