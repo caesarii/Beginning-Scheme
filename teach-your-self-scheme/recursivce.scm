@@ -2,11 +2,17 @@
 !#
 
 ; 阶乘
-(define (log value)
+(define (log x . z)
+    (display x)
     (newline)
-    (display value)
-    (newline)
+    (for-each (lambda (value)
+            (display value)
+            (newline)
+        )
+    z) 
 )
+
+
 
 (define (factorial n)
     (if (= n 0) 1
@@ -68,19 +74,22 @@
 ; 尾递归
 
 ; 反转列表
-(define (reverse! s)
-    (let loop ((s s) (r `()))
+(define loop
+    (lambda (s, r)
         (if (null? s)
             r
-            (let ((d (cdr s)))
-                log(s)
-                log(r)
+            (let* ((d (cdr s)))
+                
                 (set-cdr! s r)
                 (loop d s)
             )
         )
+    )    
+)
+(define reverse!
+    (lambda (s)
+        (loop s `())
     )
-    
 )
 (define l `(1 2 3 4))
 (log l)
