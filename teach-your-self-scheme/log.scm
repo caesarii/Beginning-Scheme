@@ -1,3 +1,5 @@
+
+
 (define (log x . z)
     (display x)
     (newline)
