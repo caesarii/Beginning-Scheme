@@ -117,6 +117,21 @@
 (log (count1))
 (log (count2))
 
+; 状态在过程间共享
+(define greet #f)
+(define tell #f)
+(let ([secret 0])
+    (set! greet
+        (lambda (message)
+            (set! secret message)))
+    (set! tell 
+        (lambda ()
+            secret)))
+(log (tell))
+(greet "hello")
+(log (tell))
+
+
 
 
 
