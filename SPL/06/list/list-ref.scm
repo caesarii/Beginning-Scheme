@@ -1,8 +1,10 @@
-(define log (lambda (v)
-    (newline)
-    (display v)
-    (newline)
-))
+(define log 
+    (lambda (v)
+        (newline)
+        (display v)
+        (newline)
+    )
+)
 
 ; 返回指定索引的元素
 ; scheme 中的基本遍历形式 不断对 list cdr
