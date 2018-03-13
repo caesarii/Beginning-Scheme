@@ -17,3 +17,18 @@
     )
 )
 
+
+; let 绑定 过程
+(let ([f +])
+    (f 2 3)
+)
+
+; let 绑定 lambda
+(let ([a (lambda (x) x)])
+    (a 2)
+)
+
+; 嵌套 let
+(let ([x 1])
+    let ([ x (+ x 1)])
+        (+ x x))
