@@ -25,14 +25,24 @@
 (let ([plist (lambda (x y z) 
         (display x)
         (display y)
-        (display z))]
-    )
+        (display z))
+    ])
     (plist 5 6 7)
 )
 
 ; 单个变量
-(let ([single (lambda x (display x))])
+(let ([single (lambda x (display x))
+    ])
     (single 1 2 3 4) ; (1 2 3 4)
     (single 1 2 `(3 4)) ; (1 2 (3 4))
+)
+
+; improper list
+(let ([implist (lambda (x y . z) 
+        (display x)
+        (display y)
+        (display z))
+    ])
+    (implist 7 8 9 10)
 )
 

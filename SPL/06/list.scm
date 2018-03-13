@@ -1,11 +1,9 @@
 
 (define list (lambda x x))
 
-(define caar
-    (lambda (x)
-        (car (car x))
-    )
-)
+
+
+
 
 ; length2
 (define length2 (lambda (x) 
@@ -47,15 +45,7 @@
     )
 )
 
-; 查找指定元素, 返回包含元素的第一个 tail list
-(define memq2 (lambda (x ls)
-        (cond 
-            [(null? ls) #f]
-            [(eq? (car ls) x) ls]
-            [else (memq x (cdr ls))]
-        )   
-    )
-)
+
 
 ; 返回 ls 的一个 tail list, 该tail list 的 car 对 p 过程返回 #t
 (define memp (lambda (p ls)
@@ -77,17 +67,7 @@
     )
 )
 
-; 移除列表中的指定元素(所有), 返回新列表
-(define remq (lambda (x ls)
-    (define loop (lambda (left right)
-        (cond
-            [(null? right) (reverse left)]
-            [(eq? (car right) x) (loop left (cdr right))]
-            [else (loop (cons (car right) left ) (cdr right))]
-        ))
-    )
-    (loop '() ls)
-))
+
 
 
 
