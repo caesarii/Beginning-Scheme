@@ -1,4 +1,12 @@
 
+(define list (lambda x x))
+
+(define caar
+    (lambda (x)
+        (car (car x))
+    )
+)
+
 ; length2
 (define length2 (lambda (x) 
     (define improper-list
@@ -23,40 +31,11 @@
     )
 ))
 
-; list-ref
-(define list-ref2
-    (lambda (ls n)
-        (if (= n 0)
-            (car ls)
-            (list-ref (cdr ls) (- n 1))
-        )
-    )
-)
 
-; list-tail
-(define list-tail2
-    (lambda (ls n)
-        (if (= n 0)
-            ls
-            (list-tail2 (cdr ls) (- n 1))
-        )
-    )
-)
 
-; append
-(define append2 (lambda args 
-    (let f ([ls '()] [args args])
-        (if (null? args)
-            ls
-            (let g ([ls ls])
-                (if (null? ls)
-                    (f (car args) (cdr args))
-                    (cons (car ls) (g (cdr ls)))
-                )
-            )
-        )
-    )
-))
+
+
+
 
 ; reverse
 (define reverse (lambda (ls)
