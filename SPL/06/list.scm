@@ -68,7 +68,7 @@
     )
 )
 
-; memq
+; 查找指定元素, 返回包含元素的第一个 tail list
 (define memq2 (lambda (x ls)
         (cond 
             [(null? ls) #f]
@@ -97,6 +97,18 @@
         )
     )
 )
+
+; 移除列表中的指定元素(所有), 返回新列表
+(define remq (lambda (x ls)
+    (define loop (lambda (left right)
+        (cond
+            [(null? right) (reverse left)]
+            [(eq? (car right) x) (loop left (cdr right))]
+            [else (loop (cons (car right) left ) (cdr right))]
+        ))
+    )
+    (loop '() ls)
+))
 
 
 
