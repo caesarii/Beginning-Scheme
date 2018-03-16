@@ -1,3 +1,4 @@
+#lang racket
 
 ; define 过程
 (define double
@@ -8,3 +9,4 @@
 
 ; define 其他类型
 (define sandwich "peanut butter")
+(display sandwich)

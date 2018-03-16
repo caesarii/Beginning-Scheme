@@ -36,3 +36,51 @@
         (+ x x)
     )
 )
+
+; named let 用 letrec 重写
+; ((letrec ((name (lambda (var...) body...)))
+;     name)
+;     expr...
+; )
+
+; 将 n 减到 2
+(define n2m
+    (lambda (n)
+        (let zero ([m 2])
+            (if (> n m)
+                [(zero (- n 1))]
+                [m]
+            )
+        )
+    )
+)
+
+
+; 
+(define divisor
+    (lambda (n)
+        (let f ([i 2])
+            (cond 
+                [(>= i n) '()]
+                [(integer? (/ n i)) (cons i (f (+ i 1)))]
+                [else (f (+ i 1))]
+            )
+        )
+    )
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
