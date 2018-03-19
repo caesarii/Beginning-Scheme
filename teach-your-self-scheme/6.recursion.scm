@@ -114,3 +114,14 @@
         )
     )
 )
+
+; map
+(map (lambda (x) (+ x 2)) '(1 2 3))
+
+; foreach
+(define x '(1 2 3))
+(for-each (lambda (n) (display n)) x)
+
+; 高级 map
+(map (lambda (x y z) (+ x y z)) '(1 2 3) '(1 2 3) '(1 2 3))
+

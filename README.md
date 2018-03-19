@@ -17,7 +17,10 @@ scheme 入门项目, 实现 scheme 中的基本库函数
 - list-ref
 - list-tail
 
+### io
+- readFile
+- writeFile
 
 ### 参考资料
 - scheme programming language
-- teach yourself scheme
+- teach yourself scheme: 前 7 章
